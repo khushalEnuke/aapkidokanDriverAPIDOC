@@ -156,8 +156,8 @@ define({ "api": [
   {
     "type": "get",
     "url": "/api/driver/order",
-    "title": "Get today orders",
-    "name": "Get_today_orders",
+    "title": "Get driver orders",
+    "name": "Get_driver_orders",
     "group": "Order",
     "parameter": {
       "fields": {
@@ -168,6 +168,20 @@ define({ "api": [
             "optional": false,
             "field": "status",
             "description": "<p>(optional) Status of the order to be displayed.</p>"
+          },
+          {
+            "group": "Query String",
+            "type": "String",
+            "optional": false,
+            "field": "from_date",
+            "description": "<p>(optional) (YYYY-MM-DD) Start Date of the order to be displayed Otherwise today's date is considered .</p>"
+          },
+          {
+            "group": "Query String",
+            "type": "String",
+            "optional": false,
+            "field": "to_date",
+            "description": "<p>(optional) (YYYY-MM-DD) End Date of the order to be displayed Otherwise today's date is considered.</p>"
           }
         ]
       }
