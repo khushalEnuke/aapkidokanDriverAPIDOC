@@ -229,5 +229,59 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "aapki-dokan-api/routes/apis/driver/order.js",
     "groupTitle": "Order"
+  },
+  {
+    "type": "put",
+    "url": "/api/driver/order/status-update/:id",
+    "title": "Update order status",
+    "name": "Update_order_status",
+    "group": "Order",
+    "parameter": {
+      "fields": {
+        "param": [
+          {
+            "group": "param",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Id of the order to be updated.</p>"
+          }
+        ],
+        "body": [
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Status of the order.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>'Bearer' + user token</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n    \"success\": true,\n    \"code\": 200,\n    \"data\": {\n        \"order\": {\n            \"address\": {\n                \"pickup\": {\n                    \"house_no\": \"21/3\",\n                    \"street\": \"XYZ street\",\n                    \"area_id\": \"5cd01b02c1a6f3317fd9f072\",\n                    \"city_id\": \"5cd01c1839b32d325085052d\"\n                },\n                \"delivery\": {\n                    \"alias\": \"work\",\n                    \"full_name\": \"Najam ul Saqib\",\n                    \"email\": \"najam.sahto@gmail.com\",\n                    \"contact_number\": \"3012999901\",\n                    \"house_no\": \"Office number 309, Progressive Plaza\",\n                    \"locality\": \"Beaumont Road\",\n                    \"landmark\": \"Near Marriet Hotel\",\n                    \"city_id\": \"5cd02537b1ef5e3bfb165f5c\"\n                }\n            },\n            \"status\": 4,\n            \"is_express_delivery\": false,\n            \"payment_type\": 1,\n            \"discount\": 0,\n            \"delivery_charges\": 0,\n            \"driver_assigned\": true,\n            \"_id\": \"5cf6b2d5b4deea62d01e4b2a\",\n            \"slot_id\": \"5cf4faaaaef3b62836047c7e\",\n            \"deliver_start_time\": \"2019-06-06T10:30:00.000Z\",\n            \"deliver_end_time\": \"2019-06-06T12:30:00.000Z\",\n            \"customer_id\": \"5ceb927146c8cf13bc2e0db6\",\n            \"store_id\": \"5cd1259b63aff817c37afb02\",\n            \"products\": [\n                {\n                    \"pictures\": [\n                        \"z7re7faj1hjvzafr9e.jpeg\"\n                    ],\n                    \"_id\": \"5cf6b2d5b4deea62d01e4b2c\",\n                    \"product_id\": \"5ce55461ff79ad6065d5b9fe\",\n                    \"size\": \"1 litre\",\n                    \"price\": 30,\n                    \"count\": 1,\n                    \"name\": \"Amul Milk\"\n                },\n                {\n                    \"pictures\": [\n                        \"z7re7faj1hjvzafr9e.jpeg\"\n                    ],\n                    \"_id\": \"5cf6b2d5b4deea62d01e4b2b\",\n                    \"product_id\": \"5ce68f90ff79ad6065d5ba15\",\n                    \"size\": \"1 litre\",\n                    \"price\": 30,\n                    \"count\": 1,\n                    \"name\": \"Amul Milk\"\n                }\n            ],\n            \"total_amount\": 60,\n            \"order_id\": \"f1444c7\",\n            \"created_at\": \"2019-06-04T18:05:09.150Z\",\n            \"updated_at\": \"2019-06-20T14:17:31.411Z\",\n            \"__v\": 0,\n            \"driver_id\": \"5d09d61e21d03516d24bbe7a\",\n            \"taxes\": []\n        }\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "aapki-dokan-api/routes/apis/driver/order.js",
+    "groupTitle": "Order"
   }
 ] });
